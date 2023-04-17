@@ -1,0 +1,2 @@
+# wst
+Web Site Template
