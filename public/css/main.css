@@ -1,0 +1,195 @@
+body {
+    display: flex;
+    font-family: "JetBrains Mono";
+    font-size: 16px;
+}
+.col-12 {
+    width: 100%;
+}
+.col-11 {
+    width: 91.3%;
+}
+.col-10 {
+    width: 83%;
+}
+.col-9 {
+    width: 74.7%;
+}
+.col-8 {
+    width: 66.4%;
+}
+.col-7 {
+    width: 58.1%;
+}
+.col-6 {
+    width: 49.8%;
+}
+.col-5 {
+    width: 41.5%;
+}
+.col-4 {
+    width: 33.2%;
+}
+.col-3 {
+    width: 24.9%;
+}
+.col-2 {
+    width: 16.6%;
+}
+.col-1 {
+    width: 8.3%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.container .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.container .container-logo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.container .container-logo .logo {
+    font-size: 34px;
+    text-align: left;
+    height: 50px;
+    margin: 10px;
+}
+div.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.container .main-content .container-content {
+    display: flex;
+    width: 100%;
+}
+
+.container .main-content .container-content .content {
+    font-size: 20px;
+    text-align: justify;
+    margin: 10px;
+}
+
+.container .main-content .container-footer {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    font-size: 20px;
+    font-style: italic;
+    color: #565353FF;
+}
+
+.error {
+    background: #FCB7BDFF;
+    border: 1px solid #FF0000;
+}
+
+.item-order {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+    color: dimgrey;
+}
+
+.item-body {
+    text-align: center;
+}
+
+.item-button {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.item-body-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    color: #696969;
+}
+
+.item-body-description {
+    text-align: left;
+    font-size: 16px;
+    color: #696969;
+}
+
+.item-body-date {
+    text-align: center;
+    font-size: 16px;
+    color: #696969;
+}
+
+.item-body-author {
+    text-align: right;
+    font-size: 16px;
+    color: #696969;
+}
+
+a.show-button-item {
+    color: #696969;
+    border-bottom: 1px solid #696969
+}
+
+a.show-button-item:hover {
+    color: #90ee90;
+}
+
+.new-row {
+    border-bottom: 1px solid #696969;
+}
+
+
+
+
+a.button, a.delete-button {
+    color: #696969;
+    border: 1px solid #696969;
+    padding: 10px;
+    width: 160px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button-row {
+    display: flex;
+    width: 100%;
+}
+
+.button-image {
+    text-align: left;
+    margin-right: 10px;
+}
+
+.button-text {
+    flex: 1;
+    text-align: center;
+}
+
+a.button:hover {
+    color: #90ee90;
+    border: 1px solid #000000;
+    background-color: #696969;
+}
+
+a.delete-button:hover {
+    color: red;
+    border: 1px solid #000000;
+    background-color: #696969;
+}
+
+.item-body .label {
+    color: #696969;
+}
+
+#test {
+    color: red;
+}

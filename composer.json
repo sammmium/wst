@@ -15,6 +15,7 @@
     ],
     "require": {
         "twig/twig": "^3.4",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "symfony/asset": "^5.4"
     }
 }

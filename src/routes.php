@@ -3,10 +3,10 @@
 return [
 
     '/' => [
-        'controller' => 'DefaultController',
+        'controller' => 'HomeController',
         'action' => 'index',
         'method' => 'GET',
-        'selected_menu_item' => 'default',
+        'selected_menu_item' => 'home',
     ]
 
 ];

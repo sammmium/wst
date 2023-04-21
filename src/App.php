@@ -7,12 +7,7 @@ use App\Models\Config;
 use App\Models\Router;
 use Twig\Loader\FilesystemLoader as Loader;
 use Twig\Environment as Twig;
-
-require_once __DIR__ . '/interfaces/AppInterface.php';
-require_once __DIR__ . '/models/Config.php';
-require_once __DIR__ . '/models/Router.php';
-require_once dirname(__DIR__) . '/vendor/twig/twig/src/Loader/FilesystemLoader.php';
-require_once dirname(__DIR__) . '/vendor/twig/twig/src/Environment.php';
+use Twig\TwigFunction;
 
 class App implements AppInterface
 {
@@ -43,9 +38,18 @@ class App implements AppInterface
 
     public function run()
     {
-        $loader = new Loader(__DIR__ . '/views');
+        $loader = new Loader(__DIR__ . '/Views');
 		$loader->addPath(dirname(__DIR__) . '/public', 'public');
 		$view = new Twig($loader);
+        $view->addFunction(new TwigFunction('asset_css', function ($asset_css) {
+            return sprintf('../css/%s', $asset_css);
+        }));
+        $view->addFunction(new TwigFunction('asset_fa', function ($asset_fa) {
+            return sprintf('../fontawesome-free-5.15.4-web/css/%s', $asset_fa);
+        }));
+        $view->addFunction(new TwigFunction('asset_js', function ($asset_js) {
+            return sprintf('../js/%s', $asset_js);
+        }));
 
 		$routes = require_once __DIR__ . '/routes.php';
 		$router = new Router();

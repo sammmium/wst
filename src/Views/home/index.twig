@@ -1,0 +1,17 @@
+{# home/index.twig #}
+
+{% extends 'base.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {# <link rel="stylesheet" href="../../public/css/dashboard.css"> #}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {# <script type="text/javascript" src="../../public/js/dashboard.js"></script> #}
+{% endblock %}
+
+{% block content %}
+    home view data
+{% endblock %}
