@@ -8,11 +8,7 @@ class Router
 
 	protected array $routes;
 
-	protected array $config;
-
-    protected $view;
-
-    protected array $menu;
+    protected $app;
 
 	protected array $route = [
 		'path' => '/',
@@ -23,30 +19,12 @@ class Router
 		'selected_menu_item' => 'home'
 	];
 
-    public function setPath(string $request_url): void
-    {
-        $this->path = $request_url;
-    }
-
-    public function setRoutes(array $routes): void
-    {
-        $this->routes = $routes;
-    }
-
-    public function setConfig(array $config): void
-    {
-        $this->config = $config;
-    }
-
-    public function setView($view): void
-    {
-        $this->view = $view;
-    }
-
-    public function setMenu(array $menu): void
-    {
-        $this->menu = $menu;
-    }
+	public function __construct($app)
+	{
+		$this->app = $app;
+		$this->routes = require __DIR__ . '/../routes.php';
+		$this->path = $_SERVER['REQUEST_URI'];
+	}
 
 	public function init(): string
 	{
@@ -79,9 +57,7 @@ class Router
             $pathController = 'App\\Controllers\\' . $this->route['controller'];
         }
 
-		$controller = new $pathController();
-        $controller->setView($this->view);
-        $controller->setMenu($this->menu);
+		$controller = new $pathController($this->app);
 		$method = $this->route['action'];
 
 		return ($id > 0) ? $controller->$method($id) : $controller->$method();

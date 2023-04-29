@@ -1,20 +1,26 @@
 <?php
 
-namespace App\controllers;
+namespace App\Controllers;
+
+use App\App;
 
 class CoreController
 {
+    protected $app;
+
     protected $view;
 
     protected $menu;
 
-    public function setView($view): void
+    protected $footer;
+
+    public function __construct($app)
     {
-        $this->view = $view;
-    }
-    
-    public function setMenu($menu): void
-    {
-        $this->menu = $menu;
+        $this->app = $app;
+        $this->view = $this->app->get('View');
+        $this->menu = $this->app->get('Menu');
+        $this->footer = $this->app->get('Footer');
+
+        // dd($this->footer->getFooter());
     }
 }
